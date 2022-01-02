@@ -1,0 +1,51 @@
+﻿@model DataAccessLayer.Model.Entity.tblUyeler
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutPanel.cshtml";
+}
+
+<title>Profilim</title>
+
+
+@* Girilen maili panelimde taşıma kısmı*@
+
+@using (Html.BeginForm("Index2", "Panelim", FormMethod.Post))
+{
+    <table class="table table-hover" style="margin-top:15px;">
+        <tr>
+            <td><label style="font-weight:bolder">MAİL ADRES:</label> @HttpContext.Current.User.Identity.Name</td>
+            @* Girilen maili panelimde taşıma kısmı*@
+        </tr>
+        <tr>
+            <td>
+                Ad :@Session["AD"].ToString()
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Soyad  :@Session["SOYAD"].ToString()
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Kullanıcı Adı :@Session["KULLANICIADI"].ToString()
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Sifre :@Session["SIFRE"].ToString()
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Telefon :@Session["TELEFON"].ToString()
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Okul :@Session["OKUL"].ToString()
+            </td>
+        </tr>
+    </table>
+}
+
